@@ -1,0 +1,4 @@
+.terraform
+.terraform.lock.hcl
+/private-key/
+secrets.tfvars
