@@ -1,0 +1,1 @@
+# Placeholder for the variables for the launch template
