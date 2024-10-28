@@ -1,0 +1,18 @@
+############# Schema ################
+
+# schema
+# users: {
+#   username: string
+#   roles: [](developer | admin | devops | auditor)
+#  }
+
+
+users:
+  - username: "Rauneet"
+    roles: ["developer", "devops"]
+
+  - username: "Verma"
+    roles: ["auditor","admin"]
+
+  - username: "John"
+    roles: ["admin"]
