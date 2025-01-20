@@ -25,8 +25,8 @@ resource "aws_instance" "for_each_with_map_ec2-instance" {
 region then you can use the provider meta-argument in the resource block
 */
   provider      = aws.ohio // in this case the resource will be provisioned in us-east-1 region
-  for_each      = var.instance_type
-  instance_type = each.value
+  for_each      = var.instance_type   // it takes the map or set as an input and creates the resource for each key
+  instance_type = each.value          // it takes the value of the key from the map or set and creates the resource
   #   instance_type = var.instance_type_map["dev"]
   ami = "ami-0c55b159cbfafe1f0"
   tags = {
