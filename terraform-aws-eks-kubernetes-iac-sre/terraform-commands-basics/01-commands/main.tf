@@ -1,3 +1,10 @@
+locals {
+  common_tags = {
+    Name = "EKS-DEMO"
+    Environment = "Development"
+  }
+}
+
 resource "aws_instance" "ec2-instance" {
 /* if you want to provision the resource other than the defualt 
 region then you can use the provider meta-argument in the resource block
@@ -19,7 +26,7 @@ region then you can use the provider meta-argument in the resource block
 }
 
 
-
+# Resource Block with for_each meta-argument
 resource "aws_instance" "for_each_with_map_ec2-instance" {
   /* if you want to provision the resource other than the defualt 
 region then you can use the provider meta-argument in the resource block
@@ -40,4 +47,13 @@ region then you can use the provider meta-argument in the resource block
   }
 
 
+}
+
+
+resource "aws_instance" "ec2vm" {
+    ami = "ami-0c55b159cbfafe1f0"
+    instance_type = "t3.micro"
+    user_data = file("${path.module}/app1-install.sh")
+    tags = local.common_tags
+  
 }
