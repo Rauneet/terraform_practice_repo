@@ -1,0 +1,34 @@
+name: my first action
+on:
+  push:
+    branches:
+      - main
+      - master # Added master back as per your original file
+jobs:
+  my_first_job:
+    name: My First Job
+    permissions: {} # Uncommented and indented correctly
+    # actions: read|write|none
+    # attestations: read|write|none
+    # checks: read|write|none
+    # contents: read|write|none
+    # deployments: read|write|none
+    # id-token: write|none
+    # issues: read|write|none
+    # models: read|none
+    # discussions: read|write|none
+    # packages: read|write|none
+    # pages: read|write|none
+    # pull-requests: read|write|none
+    # security-events: read|write|none
+    # statuses: read|write|none
+    runs-on: ubuntu-latest # <-- CORRECT INDENTATION
+    steps: # <-- CORRECT INDENTATION
+      - name: Print a greeting
+        env:
+          GREETING: HELLO
+          FIRST_NAME: Mona
+          LAST_NAME: Octocat
+        run: |
+          echo "$GREETING $FIRST_NAME $LAST_NAME!" # Removed leading space for cleaner output
+
